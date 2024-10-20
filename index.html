@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع قياس الرجولة والجمال والذكاء</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Amiri', serif;
+            background-color: #e3f2fd; /* لون خلفية أزرق فاتح */
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            margin: auto;
+            transition: transform 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            color: #0d47a1; /* لون أزرق داكن */
+        }
+        .results {
+            margin-top: 20px;
+        }
+        .results p {
+            font-size: 18px;
+            color: #555;
+        }
+        button {
+            background-color: #1976d2; /* لون أزرق */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 7px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #1565c0; /* لون أزرق داكن عند التمرير */
+        }
+        .loading {
+            display: none;
+            font-size: 20px;
+            color: #1976d2;
+            margin-top: 20px;
+        }
+        .result-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .male-icon {
+            color: #ff5722; /* لون برتقالي */
+        }
+        .brain-icon {
+            color: #42a5f5; /* لون أزرق فاتح */
+        }
+        .star-icon {
+            color: #ffd600; /* لون ذهبي */
+        }
+        .strength-icon {
+            color: #388e3c; /* لون أخضر داكن */
+        }
+        .fun-icon {
+            color: #66bb6a; /* لون أخضر فاتح */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1><i class="fas fa-male male-icon"></i> قياس الرجولة والجمال</h1>
+    <p>اضغط على الزر لمعرفة النسب!</p>
+    <button onclick="generateRandomValues()"><i class="fas fa-calculator"></i> احسب</button>
+    
+    <div class="loading" id="loading"><i class="fas fa-spinner fa-spin"></i> جاري التحميل...</div>
+    
+    <div class="results" id="results"></div>
+</div>
+
+<script>
+    function generateRandomValues() {
+        const loadingDiv = document.getElementById('loading');
+        const resultsDiv = document.getElementById('results');
+        
+        loadingDiv.style.display = 'block';
+        resultsDiv.innerHTML = '';
+
+        setTimeout(() => {
+            const masculinity = Math.floor(Math.random() * 101);
+            const beauty = Math.floor(Math.random() * 101);
+            const intelligence = Math.floor(Math.random() * 101);
+            const strength = Math.floor(Math.random() * 101);
+            const fun = Math.floor(Math.random() * 101);
+            
+            let masculinityCategory;
+            if (masculinity >= 80) {
+                masculinityCategory = "الزلم الخشنة الزلم";
+            } else if (masculinity >= 50) {
+                masculinityCategory = "تمشي حال";
+            } else if (masculinity >= 30) {
+                masculinityCategory = "روح بول ونام";
+            } else {
+                masculinityCategory = "زلمة چيس حب";
+            }
+            
+            loadingDiv.style.display = 'none';
+            
+            // إظهار النتائج تدريجيا
+            setTimeout(() => {
+                resultsDiv.innerHTML += `<p class="result-icon male-icon"><i class="fas fa-male"></i> نسبة الرجولة: ${masculinity}% - ${masculinityCategory}</p>`;
+            }, 500);
+
+            setTimeout(() => {
+                resultsDiv.innerHTML += `<p class="result-icon star-icon"><i class="fas fa-star"></i> نسبة الجمال: ${beauty}%</p>`;
+            }, 1000);
+
+            setTimeout(() => {
+                resultsDiv.innerHTML += `<p class="result-icon brain-icon"><i class="fas fa-brain"></i> نسبة الذكاء: ${intelligence}%</p>`;
+            }, 1500);
+
+            setTimeout(() => {
+                resultsDiv.innerHTML += `<p class="result-icon strength-icon"><i class="fas fa-dumbbell"></i> نسبة القوة: ${strength}%</p>`;
+            }, 2000);
+
+            setTimeout(() => {
+                resultsDiv.innerHTML += `<p class="result-icon fun-icon"><i class="fas fa-laugh"></i> نسبة المرح: ${fun}%</p>`;
+            }, 2500);
+
+        }, 2000);
+    }
+</script>
+
+</body>
+</html>
