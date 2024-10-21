@@ -74,6 +74,20 @@
         .fun-icon {
             color: #66bb6a; /* لون أخضر فاتح */
         }
+        .telegram-container {
+            margin-top: 30px;
+        }
+        .telegram-button {
+            color: #0088cc;
+            text-decoration: none;
+            font-size: 24px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: color 0.3s;
+        }
+        .telegram-button:hover {
+            color: #005b7f;
+        }
     </style>
 </head>
 <body>
@@ -86,6 +100,12 @@
     <div class="loading" id="loading"><i class="fas fa-spinner fa-spin"></i> جاري التحميل...</div>
     
     <div class="results" id="results"></div>
+</div>
+
+<div class="telegram-container">
+    <a href="https://t.me/Scorpion_scorp" class="telegram-button" target="_blank">
+        <i class="fab fa-telegram-plane"></i> انضم لقناتنا على تليجرام
+    </a>
 </div>
 
 <script>
