@@ -1,159 +1,265 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Register form</title>
+
+    <!--Boxicons CDN-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' 
+    rel='stylesheet'>
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- FOR SOURCE CODE COMMENT "CODE" -->
+
+    <div class="wrapper">
+        <span class="rotate-bg"></span>
+        <span class="rotate-bg2"></span>
+
+        <div class="form-box login">
+            <h2 class="title animation" style="--i:0; --j:21">Login</h2>
+            <form action="#">
+
+                <div class="input-box animation" style="--i:1; --j:22">
+                    <input type="text" required>
+                    <label for="">Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+
+                <div class="input-box animation" style="--i:2; --j:23">
+                    <input type="password" required>
+                    <label for="">Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <button type="submit" class="btn animation" style="--i:3; --j:24">Login</button>
+                <div class="linkTxt animation" style="--i:5; --j:25">
+                    <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="info-text login">
+            <h2 class="animation" style="--i:0; --j:20">Welcome Back!</h2>
+            <p class="animation" style="--i:1; --j:21">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti,rem?</p>
+        </div>
+
+
+
+
+
+
+
+        <div class="form-box register">
+
+            <h2 class="title animation" style="--i:17; --j:0">Sign Up</h2>
+
+            <form action="#">
+
+                <div class="input-box animation" style="--i:18; --j:1">
+                    <input type="text" required>
+                    <label for="">Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+
+                <div class="input-box animation" style="--i:19; --j:2">
+                    <input type="email" required>
+                    <label for="">Email</label>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+
+                <div class="input-box animation" style="--i:20; --j:3">
+                    <input type="password" required>
+                    <label for="">Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+                <button type="submit" class="btn animation" style="--i:21;--j:4">Sign Up</button>
+
+                <div class="linkTxt animation" style="--i:22; --j:5">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="info-text register">
+            <h2 class="animation" style="--i:17; --j:0;">Welcome Back!</h2>
+            <p class="animation" style="--i:18; --j:1;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti,rem?</p>
+        </div>
+
+    </div>
+
+    <!--Script.js-->
+    <script src="script.js"></script>
+</body>
+
+</html> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موقع قياس الرجولة والجمال والذكاء</title>
-
-    <!--Boxicons CDN-->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
-
-    <!--CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Amiri', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e3f2fd;
-        }
-        .wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .form-box {
-            position: relative;
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            background-color: #e3f2fd; /* لون خلفية أزرق فاتح */
             text-align: center;
+            padding: 50px;
         }
-        .form-box h2 {
-            margin-bottom: 20px;
-            color: #1976d2;
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            margin: auto;
+            transition: transform 0.3s ease;
         }
-        .input-box {
-            position: relative;
-            margin: 20px 0;
+        .container:hover {
+            transform: scale(1.05);
         }
-        .input-box input {
-            width: 100%;
-            padding: 10px 15px;
-            margin: 10px 0;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            outline: none;
+        h1 {
+            color: #0d47a1; /* لون أزرق داكن */
         }
-        .input-box label {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #aaa;
-            transition: 0.3s;
+        .results {
+            margin-top: 20px;
         }
-        .input-box input:focus + label,
-        .input-box input:not(:placeholder-shown) + label {
-            top: -5px;
-            font-size: 12px;
-            color: #1976d2;
+        .results p {
+            font-size: 18px;
+            color: #555;
         }
-        .btn {
-            background-color: #1976d2;
+        button {
+            background-color: #1976d2; /* لون أزرق */
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            margin-top: 20px;
             cursor: pointer;
-            transition: 0.3s;
+            border-radius: 7px;
+            font-size: 18px;
+            transition: background-color 0.3s;
         }
-        .btn:hover {
-            background-color: #1565c0;
+        button:hover {
+            background-color: #1565c0; /* لون أزرق داكن عند التمرير */
         }
-        .hidden {
+        .loading {
             display: none;
+            font-size: 20px;
+            color: #1976d2;
+            margin-top: 20px;
+        }
+        .result-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .male-icon {
+            color: #ff5722; /* لون برتقالي */
+        }
+        .brain-icon {
+            color: #42a5f5; /* لون أزرق فاتح */
+        }
+        .star-icon {
+            color: #ffd600; /* لون ذهبي */
+        }
+        .strength-icon {
+            color: #388e3c; /* لون أخضر داكن */
+        }
+        .fun-icon {
+            color: #66bb6a; /* لون أخضر فاتح */
+        }
+        .telegram-container {
+            margin-top: 30px;
+        }
+        .telegram-button {
+            color: #0088cc;
+            text-decoration: none;
+            font-size: 24px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: color 0.3s;
+        }
+        .telegram-button:hover {
+            color: #005b7f;
         }
     </style>
 </head>
 <body>
-    <!-- صفحة تسجيل الدخول/إنشاء الحساب -->
-    <div class="wrapper" id="auth-section">
-        <div class="form-box" id="login-box">
-            <h2>تسجيل الدخول</h2>
-            <div class="input-box">
-                <input type="text" required placeholder=" ">
-                <label>اسم المستخدم</label>
-            </div>
-            <div class="input-box">
-                <input type="password" required placeholder=" ">
-                <label>كلمة المرور</label>
-            </div>
-            <button class="btn" onclick="showMainContent()">تسجيل الدخول</button>
-            <p>ليس لديك حساب؟ <a href="#" onclick="toggleAuth()">إنشاء حساب</a></p>
-        </div>
 
-        <div class="form-box hidden" id="register-box">
-            <h2>إنشاء حساب</h2>
-            <div class="input-box">
-                <input type="text" required placeholder=" ">
-                <label>اسم المستخدم</label>
-            </div>
-            <div class="input-box">
-                <input type="email" required placeholder=" ">
-                <label>البريد الإلكتروني</label>
-            </div>
-            <div class="input-box">
-                <input type="password" required placeholder=" ">
-                <label>كلمة المرور</label>
-            </div>
-            <button class="btn" onclick="showMainContent()">إنشاء حساب</button>
-            <p>لديك حساب بالفعل؟ <a href="#" onclick="toggleAuth()">تسجيل الدخول</a></p>
-        </div>
-    </div>
+<div class="container">
+    <h1><i class="fas fa-male male-icon"></i> قياس الرجولة والجمال</h1>
+    <p>اضغط على الزر لمعرفة النسب!</p>
+    <button onclick="generateRandomValues()"><i class="fas fa-calculator"></i> احسب</button>
+    
+    <div class="loading" id="loading"><i class="fas fa-spinner fa-spin"></i> جاري التحميل...</div>
+    
+    <div class="results" id="results"></div>
+</div>
 
-    <!-- محتوى الموقع الرئيسي -->
-    <div class="hidden" id="main-content">
-        <div class="wrapper">
-            <div class="form-box">
-                <h2><i class="fas fa-male"></i> قياس الرجولة والجمال</h2>
-                <p>اضغط على الزر لمعرفة النسب!</p>
-                <button class="btn" onclick="generateRandomValues()">احسب</button>
-                <div id="results" style="margin-top: 20px;"></div>
-            </div>
-        </div>
-    </div>
+<div class="telegram-container">
+    <a href="https://t.me/Scorpion_scorp" class="telegram-button" target="_blank">
+        <i class="fab fa-telegram-plane"></i> انضم لقناتنا على تليجرام
+    </a>
+</div>
 
-    <script>
-        function toggleAuth() {
-            document.getElementById('login-box').classList.toggle('hidden');
-            document.getElementById('register-box').classList.toggle('hidden');
-        }
+<script>
+    function generateRandomValues() {
+        const loadingDiv = document.getElementById('loading');
+        const resultsDiv = document.getElementById('results');
+        
+        loadingDiv.style.display = 'block';
+        resultsDiv.innerHTML = '';
 
-        function showMainContent() {
-            document.getElementById('auth-section').classList.add('hidden');
-            document.getElementById('main-content').classList.remove('hidden');
-        }
-
-        function generateRandomValues() {
-            const resultsDiv = document.getElementById('results');
+        setTimeout(() => {
             const masculinity = Math.floor(Math.random() * 101);
             const beauty = Math.floor(Math.random() * 101);
             const intelligence = Math.floor(Math.random() * 101);
-            resultsDiv.innerHTML = `
-                <p>نسبة الرجولة: ${masculinity}%</p>
-                <p>نسبة الجمال: ${beauty}%</p>
-                <p>نسبة الذكاء: ${intelligence}%</p>
-            `;
-        }
-    </script>
+            const strength = Math.floor(Math.random() * 101);
+            const fun = Math.floor(Math.random() * 101);
+            
+            let masculinityCategory;
+            if (masculinity >= 80) {
+                masculinityCategory = "الزلم الخشنة الزلم";
+            } else if (masculinity >= 50) {
+                masculinityCategory = "تمشي حال";
+            } else if (masculinity >= 30) {
+                masculinityCategory = "روح بول ونام";
+            } else {
+                masculinityCategory = "زلمة چيس حب";
+            }
+            
+            loadingDiv.style.display = 'none';
+            
+            // إظهار النتائج تدريجيا
+            setTimeout(() => {
+                resultsDiv.innerHTML += `<p class="result-icon male-icon"><i class="fas fa-male"></i> نسبة الرجولة: ${masculinity}% - ${masculinityCategory}</p>`;
+            }, 500);
+
+            setTimeout(() => {
+                resultsDiv.innerHTML += `<p class="result-icon star-icon"><i class="fas fa-star"></i> نسبة الجمال: ${beauty}%</p>`;
+            }, 1000);
+
+            setTimeout(() => {
+                resultsDiv.innerHTML += `<p class="result-icon brain-icon"><i class="fas fa-brain"></i> نسبة الذكاء: ${intelligence}%</p>`;
+            }, 1500);
+
+            setTimeout(() => {
+                resultsDiv.innerHTML += `<p class="result-icon strength-icon"><i class="fas fa-dumbbell"></i> نسبة القوة: ${strength}%</p>`;
+            }, 2000);
+
+            setTimeout(() => {
+                resultsDiv.innerHTML += `<p class="result-icon fun-icon"><i class="fas fa-laugh"></i> نسبة المرح: ${fun}%</p>`;
+            }, 2500);
+
+        }, 2000);
+    }
+</script>
+
 </body>
 </html>
