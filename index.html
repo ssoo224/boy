@@ -1,106 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-        <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Register form</title>
-
-    <!--Boxicons CDN-->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' 
-    rel='stylesheet'>
-
-    <!--Custom CSS-->
-    <link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-    <!-- FOR SOURCE CODE COMMENT "CODE" -->
-
-    <div class="wrapper">
-        <span class="rotate-bg"></span>
-        <span class="rotate-bg2"></span>
-
-        <div class="form-box login">
-            <h2 class="title animation" style="--i:0; --j:21">Login</h2>
-            <form action="#">
-
-                <div class="input-box animation" style="--i:1; --j:22">
-                    <input type="text" required>
-                    <label for="">Username</label>
-                    <i class='bx bxs-user'></i>
-                </div>
-
-                <div class="input-box animation" style="--i:2; --j:23">
-                    <input type="password" required>
-                    <label for="">Password</label>
-                    <i class='bx bxs-lock-alt'></i>
-                </div>
-                <button type="submit" class="btn animation" style="--i:3; --j:24">Login</button>
-                <div class="linkTxt animation" style="--i:5; --j:25">
-                    <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
-                </div>
-            </form>
-        </div>
-
-        <div class="info-text login">
-            <h2 class="animation" style="--i:0; --j:20">Welcome Back!</h2>
-            <p class="animation" style="--i:1; --j:21">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti,rem?</p>
-        </div>
-
-
-
-
-
-
-
-        <div class="form-box register">
-
-            <h2 class="title animation" style="--i:17; --j:0">Sign Up</h2>
-
-            <form action="#">
-
-                <div class="input-box animation" style="--i:18; --j:1">
-                    <input type="text" required>
-                    <label for="">Username</label>
-                    <i class='bx bxs-user'></i>
-                </div>
-
-                <div class="input-box animation" style="--i:19; --j:2">
-                    <input type="email" required>
-                    <label for="">Email</label>
-                    <i class='bx bxs-envelope'></i>
-                </div>
-
-                <div class="input-box animation" style="--i:20; --j:3">
-                    <input type="password" required>
-                    <label for="">Password</label>
-                    <i class='bx bxs-lock-alt'></i>
-                </div>
-
-                <button type="submit" class="btn animation" style="--i:21;--j:4">Sign Up</button>
-
-                <div class="linkTxt animation" style="--i:22; --j:5">
-                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
-                </div>
-
-            </form>
-        </div>
-
-        <div class="info-text register">
-            <h2 class="animation" style="--i:17; --j:0;">Welcome Back!</h2>
-            <p class="animation" style="--i:18; --j:1;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti,rem?</p>
-        </div>
-
-    </div>
-
-    <!--Script.js-->
-    <script src="script.js"></script>
-</body>
-
-</html> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موقع قياس الرجولة والجمال والذكاء</title>
@@ -109,7 +9,7 @@
     <style>
         body {
             font-family: 'Amiri', serif;
-            background-color: #e3f2fd; /* لون خلفية أزرق فاتح */
+            background-color: #e3f2fd;
             text-align: center;
             padding: 50px;
         }
@@ -126,7 +26,7 @@
             transform: scale(1.05);
         }
         h1 {
-            color: #0d47a1; /* لون أزرق داكن */
+            color: #0d47a1;
         }
         .results {
             margin-top: 20px;
@@ -136,7 +36,7 @@
             color: #555;
         }
         button {
-            background-color: #1976d2; /* لون أزرق */
+            background-color: #1976d2;
             color: white;
             border: none;
             padding: 12px 25px;
@@ -147,7 +47,7 @@
             transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #1565c0; /* لون أزرق داكن عند التمرير */
+            background-color: #1565c0;
         }
         .loading {
             display: none;
@@ -160,19 +60,19 @@
             margin-bottom: 10px;
         }
         .male-icon {
-            color: #ff5722; /* لون برتقالي */
+            color: #ff5722;
         }
         .brain-icon {
-            color: #42a5f5; /* لون أزرق فاتح */
+            color: #42a5f5;
         }
         .star-icon {
-            color: #ffd600; /* لون ذهبي */
+            color: #ffd600;
         }
         .strength-icon {
-            color: #388e3c; /* لون أخضر داكن */
+            color: #388e3c;
         }
         .fun-icon {
-            color: #66bb6a; /* لون أخضر فاتح */
+            color: #66bb6a;
         }
         .telegram-container {
             margin-top: 30px;
@@ -222,7 +122,7 @@
             const intelligence = Math.floor(Math.random() * 101);
             const strength = Math.floor(Math.random() * 101);
             const fun = Math.floor(Math.random() * 101);
-            
+
             let masculinityCategory;
             if (masculinity >= 80) {
                 masculinityCategory = "الزلم الخشنة الزلم";
@@ -233,30 +133,25 @@
             } else {
                 masculinityCategory = "زلمة چيس حب";
             }
-            
+
             loadingDiv.style.display = 'none';
-            
-            // إظهار النتائج تدريجيا
-            setTimeout(() => {
-                resultsDiv.innerHTML += `<p class="result-icon male-icon"><i class="fas fa-male"></i> نسبة الرجولة: ${masculinity}% - ${masculinityCategory}</p>`;
-            }, 500);
 
-            setTimeout(() => {
-                resultsDiv.innerHTML += `<p class="result-icon star-icon"><i class="fas fa-star"></i> نسبة الجمال: ${beauty}%</p>`;
-            }, 1000);
+            // عرض النتائج بالتسلسل
+            const results = [
+                `<p class="result-icon male-icon"><i class="fas fa-male"></i> نسبة الرجولة: ${masculinity}% - ${masculinityCategory}</p>`,
+                `<p class="result-icon star-icon"><i class="fas fa-star"></i> نسبة الجمال: ${beauty}%</p>`,
+                `<p class="result-icon brain-icon"><i class="fas fa-brain"></i> نسبة الذكاء: ${intelligence}%</p>`,
+                `<p class="result-icon strength-icon"><i class="fas fa-dumbbell"></i> نسبة القوة: ${strength}%</p>`,
+                `<p class="result-icon fun-icon"><i class="fas fa-laugh"></i> نسبة المرح: ${fun}%</p>`
+            ];
 
-            setTimeout(() => {
-                resultsDiv.innerHTML += `<p class="result-icon brain-icon"><i class="fas fa-brain"></i> نسبة الذكاء: ${intelligence}%</p>`;
-            }, 1500);
-
-            setTimeout(() => {
-                resultsDiv.innerHTML += `<p class="result-icon strength-icon"><i class="fas fa-dumbbell"></i> نسبة القوة: ${strength}%</p>`;
-            }, 2000);
-
-            setTimeout(() => {
-                resultsDiv.innerHTML += `<p class="result-icon fun-icon"><i class="fas fa-laugh"></i> نسبة المرح: ${fun}%</p>`;
-            }, 2500);
-
+            let delay = 0;
+            results.forEach((result) => {
+                setTimeout(() => {
+                    resultsDiv.innerHTML += result;
+                }, delay);
+                delay += 500;
+            });
         }, 2000);
     }
 </script>
